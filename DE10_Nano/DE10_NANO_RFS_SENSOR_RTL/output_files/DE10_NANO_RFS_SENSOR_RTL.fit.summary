@@ -1,0 +1,20 @@
+Fitter Status : Successful - Thu Apr 07 01:21:34 2022
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : DE10_NANO_RFS_SENSOR_RTL
+Top-level Entity Name : DE10_NANO_RFS_SENSOR_RTL
+Family : Cyclone V
+Device : 5CSEBA6U23I7
+Timing Models : Final
+Logic utilization (in ALMs) : 1,109 / 41,910 ( 3 % )
+Total registers : 3081
+Total pins : 87 / 314 ( 28 % )
+Total virtual pins : 0
+Total block memory bits : 197,632 / 5,662,720 ( 3 % )
+Total RAM Blocks : 20 / 553 ( 4 % )
+Total DSP Blocks : 1 / 112 ( < 1 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

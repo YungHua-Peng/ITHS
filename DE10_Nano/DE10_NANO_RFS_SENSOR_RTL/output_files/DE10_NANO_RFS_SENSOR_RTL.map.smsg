@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at RH_TEMP.v(65): always construct contains both blocking and non-blocking assignments File: D:/Ryan_Peng/FPGA_Project/DE10_Nano/DE10_NANO_RFS_SENSOR_RTL/V/RH_TEMP.v Line: 65
+Warning (10268): Verilog HDL information at APDS_9301.v(57): always construct contains both blocking and non-blocking assignments File: D:/Ryan_Peng/FPGA_Project/DE10_Nano/DE10_NANO_RFS_SENSOR_RTL/V/APDS_9301.v Line: 57

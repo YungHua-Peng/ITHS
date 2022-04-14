@@ -1,0 +1,65 @@
+module HC1000
+(
+input  RESET_N         ,
+input  CLOCK_50        ,
+input  RH_TEMP_DRDY_n ,
+output RH_TEMP_I2C_SCL, 
+inout  RH_TEMP_I2C_SDA,
+
+output  [7:0] BCD_T , 
+output  [7:0] BCD_H
+
+);
+//---- Power Monitor IC Connfiguration ---
+parameter  CONFIGURATION =  16'h1000;
+
+wire [7:0] Temperature_S  ; 
+wire [7:0] Humidity_S ; 
+
+//----Humidity_Temperature Result---	
+wire [15:0] TEMP_CURRENT ;   
+wire [15:0] RH_CURRENT ;
+
+//----Humidity_Temperature ---	
+RH_TEMP ctl( 
+   //--SYSTEM--   
+	.RESET_N 			(RESET_N       ),
+   .CLK_50           (CLOCK_50      ),
+	//--IC SIDE-- 
+	.RH_TEMP_DRDY_n   (RH_TEMP_DRDY_n),   
+	.RH_TEMP_I2C_SCL  (RH_TEMP_I2C_SCL),
+	.RH_TEMP_I2C_SDA  (RH_TEMP_I2C_SDA),  
+	//<Configuration>
+	.Configuration    (CONFIGURATION  ),
+	//<Temperature>
+	.Temperature      (TEMP_CURRENT   ), 
+	//<Humidity>
+	.Humidity         (RH_CURRENT    )
+);
+
+
+assign  Temperature_S   = (TEMP_CURRENT*165)/65536 -40 ; 
+
+assign  Humidity_S =  (RH_CURRENT *100) /65536 ; 
+
+
+		
+//---Display HEX 
+HEX2BCD  h1(
+ .iCLK_50 ( CLOCK_50       ),
+ .iHEX    ( Temperature_S[7:0] ), 
+ .oBCD    ( BCD_T      )  
+);
+//---
+
+HEX2BCD  h2(
+ .iCLK_50 ( CLOCK_50       ),
+ .iHEX    ( Humidity_S [7:0] ), 
+ .oBCD    ( BCD_H      )  
+ 
+);
+ 
+ endmodule
+ 
+ 
+ 

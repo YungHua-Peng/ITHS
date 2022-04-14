@@ -1,0 +1,689 @@
+#============================================================
+# Build by Terasic System Builder
+#============================================================
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEBA6U23I7
+set_global_assignment -name TOP_LEVEL_ENTITY "DE10_NANO_RFS_SENSOR_RTL"
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "16.0.2"
+set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:17:25 MARCH 14,2022"
+set_global_assignment -name DEVICE_FILTER_PACKAGE UFBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 672
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+#============================================================
+# CLOCK
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_CLK1_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_CLK2_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_CLK3_50
+set_location_assignment PIN_V11 -to FPGA_CLK1_50
+set_location_assignment PIN_Y13 -to FPGA_CLK2_50
+set_location_assignment PIN_E11 -to FPGA_CLK3_50
+
+#============================================================
+# KEY
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1]
+set_location_assignment PIN_AH17 -to KEY[0]
+set_location_assignment PIN_AH16 -to KEY[1]
+
+#============================================================
+# LED
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[7]
+set_location_assignment PIN_W15 -to LED[0]
+set_location_assignment PIN_AA24 -to LED[1]
+set_location_assignment PIN_V16 -to LED[2]
+set_location_assignment PIN_V15 -to LED[3]
+set_location_assignment PIN_AF26 -to LED[4]
+set_location_assignment PIN_AE26 -to LED[5]
+set_location_assignment PIN_Y16 -to LED[6]
+set_location_assignment PIN_AA23 -to LED[7]
+
+#============================================================
+# SW
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
+set_location_assignment PIN_Y24 -to SW[0]
+set_location_assignment PIN_W24 -to SW[1]
+set_location_assignment PIN_W21 -to SW[2]
+set_location_assignment PIN_W20 -to SW[3]
+
+#============================================================
+# GPIO_1, GPIO connect to RFS - RF and Sensor
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BT_KEY
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BT_UART_RX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BT_UART_TX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LSENSOR_INT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LSENSOR_SCL
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LSENSOR_SDA
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MPU_AD0_SDO
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MPU_CS_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MPU_FSYNC
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MPU_INT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MPU_SCL_SCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MPU_SDA_SDI
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RH_TEMP_DRDY_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RH_TEMP_I2C_SCL
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RH_TEMP_I2C_SDA
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TMD_D[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TMD_D[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TMD_D[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TMD_D[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TMD_D[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TMD_D[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TMD_D[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TMD_D[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART2USB_CTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART2USB_RTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART2USB_RX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART2USB_TX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WIFI_EN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WIFI_RST_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WIFI_UART0_CTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WIFI_UART0_RTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WIFI_UART0_RX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WIFI_UART0_TX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WIFI_UART1_RX
+set_location_assignment PIN_AG26 -to BT_KEY
+set_location_assignment PIN_AH21 -to BT_UART_RX
+set_location_assignment PIN_AG21 -to BT_UART_TX
+set_location_assignment PIN_Y15 -to LSENSOR_INT
+set_location_assignment PIN_AF27 -to LSENSOR_SCL
+set_location_assignment PIN_AH27 -to LSENSOR_SDA
+set_location_assignment PIN_AH19 -to MPU_AD0_SDO
+set_location_assignment PIN_AG19 -to MPU_CS_n
+set_location_assignment PIN_AE25 -to MPU_FSYNC
+set_location_assignment PIN_AA15 -to MPU_INT
+set_location_assignment PIN_AH26 -to MPU_SCL_SCLK
+set_location_assignment PIN_AF25 -to MPU_SDA_SDI
+set_location_assignment PIN_AG28 -to RH_TEMP_DRDY_n
+set_location_assignment PIN_AD26 -to RH_TEMP_I2C_SCL
+set_location_assignment PIN_AF28 -to RH_TEMP_I2C_SDA
+set_location_assignment PIN_AF20 -to TMD_D[0]
+set_location_assignment PIN_AF18 -to TMD_D[1]
+set_location_assignment PIN_AG18 -to TMD_D[2]
+set_location_assignment PIN_AH18 -to TMD_D[3]
+set_location_assignment PIN_AE17 -to TMD_D[4]
+set_location_assignment PIN_AE19 -to TMD_D[5]
+set_location_assignment PIN_AE20 -to TMD_D[6]
+set_location_assignment PIN_AG15 -to TMD_D[7]
+set_location_assignment PIN_AE22 -to UART2USB_CTS
+set_location_assignment PIN_AF22 -to UART2USB_RTS
+set_location_assignment PIN_AH22 -to UART2USB_RX
+set_location_assignment PIN_AG24 -to UART2USB_TX
+set_location_assignment PIN_AG25 -to WIFI_EN
+set_location_assignment PIN_AC24 -to WIFI_RST_n
+set_location_assignment PIN_AH23 -to WIFI_UART0_CTS
+set_location_assignment PIN_AA20 -to WIFI_UART0_RTS
+set_location_assignment PIN_AG23 -to WIFI_UART0_RX
+set_location_assignment PIN_AF23 -to WIFI_UART0_TX
+set_location_assignment PIN_AH24 -to WIFI_UART1_RX
+
+#============================================================
+# End of pin assignments by Terasic System Builder
+#============================================================
+
+
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE V/SENSOR_OUT.v
+set_global_assignment -name SDC_FILE DE10_NANO_RFS_SENSOR_RTL.SDC
+set_global_assignment -name VERILOG_FILE V/SEG7_LUT_V.v
+set_global_assignment -name VERILOG_FILE V/RH_TEMP.v
+set_global_assignment -name SOURCE_FILE V/MPU9250_AK8963.h
+set_global_assignment -name VERILOG_FILE V/MPU_9250.v
+set_global_assignment -name VERILOG_FILE V/LIGHT_APDS_9301.v
+set_global_assignment -name VERILOG_FILE V/I2C_WRITE_WORD_2BYTE.v
+set_global_assignment -name VERILOG_FILE V/I2C_WRITE_POINTER.v
+set_global_assignment -name VERILOG_FILE V/I2C_READ_2BYTE.v
+set_global_assignment -name VERILOG_FILE V/HEX2BCD.v
+set_global_assignment -name VERILOG_FILE V/HC1000.v
+set_global_assignment -name VERILOG_FILE V/CLOCKMEM.v
+set_global_assignment -name VERILOG_FILE V/APDS_9301.v
+set_global_assignment -name VERILOG_FILE V/HEX_SWITCH.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE all_sensor.stp
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to FPGA_CLK1_50 -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[17] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[18] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[19] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[20] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[21] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[22] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[23] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[24] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[25] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[26] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[27] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[28] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[29] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[30] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[31] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[32] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[33] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[34] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[35] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[36] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[37] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[38] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[39] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[40] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[41] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[42] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[43] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[44] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[45] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[46] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[47] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[48] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[49] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[50] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[51] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[52] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[53] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[54] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[55] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[56] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[57] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[58] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[59] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[60] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[61] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[62] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[63] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[64] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[65] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[66] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[67] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[68] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[69] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[70] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[71] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[72] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[73] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[74] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[75] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[76] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[77] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[78] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[79] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[80] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[81] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[82] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[83] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[84] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[85] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[86] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[87] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[88] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[89] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[90] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[91] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[92] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[93] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[94] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[95] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[96] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[97] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[98] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[99] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[100] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[101] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[102] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[103] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[104] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[105] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[106] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[107] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[108] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[109] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[110] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[111] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[112] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[113] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[114] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[115] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[116] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[117] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[118] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[119] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[120] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[121] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[122] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[123] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[124] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[125] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[126] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[127] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_X[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[17] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[18] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[19] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[20] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[21] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[22] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[23] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[24] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[25] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[26] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[27] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[28] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[29] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[30] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[31] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Y[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[32] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[33] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[34] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[35] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[36] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[37] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[38] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[39] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[40] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[41] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[42] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[43] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[44] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[45] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[46] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[47] -to "SENSOR_OUT:SENSOR_OUT_i|ACCELEROMETER_Z[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[48] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[49] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[50] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[51] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[52] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[53] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[54] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[55] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[56] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[57] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[58] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[59] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[60] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[61] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[62] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[63] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT0[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[64] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[65] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[66] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[67] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[68] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[69] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[70] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[71] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[72] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[73] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[74] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[75] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[76] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[77] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[78] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[79] -to "SENSOR_OUT:SENSOR_OUT_i|Ambient_LIGHT1[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[80] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[81] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[82] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[83] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[84] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[85] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[86] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[87] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[88] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[89] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[90] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[91] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[92] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[93] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[94] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[95] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_X[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[96] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[97] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[98] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[99] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[100] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[101] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[102] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[103] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[104] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[105] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[106] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[107] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[108] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[109] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[110] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[111] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Y[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[112] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[113] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[114] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[115] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[116] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[117] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[118] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[119] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[120] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[121] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[122] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[123] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[124] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[125] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[126] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[127] -to "SENSOR_OUT:SENSOR_OUT_i|GYROSCOPE_Z[9]" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=1024" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=1024" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[128] -to "SENSOR_OUT:SENSOR_OUT_i|HM_TR" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[129] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[130] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[131] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[132] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[133] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[134] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[135] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[136] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[137] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[138] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[139] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[140] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[141] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[142] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[143] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[144] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[145] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[146] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[147] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[148] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[149] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[150] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[151] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[152] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[153] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[154] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[155] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[156] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[157] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[158] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[159] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[160] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[161] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[162] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[163] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[164] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[165] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[166] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[167] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[168] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[169] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[170] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[171] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[172] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[173] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[174] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[175] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[176] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[177] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[178] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[179] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[180] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[181] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[182] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[183] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[184] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[185] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[186] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[187] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[188] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[189] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[190] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[191] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[192] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[128] -to "SENSOR_OUT:SENSOR_OUT_i|HM_TR" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[129] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[130] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[131] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[132] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[133] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[134] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[135] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[136] -to "SENSOR_OUT:SENSOR_OUT_i|HUMITY[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[137] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[138] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[139] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[140] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[141] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[142] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[143] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[144] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[145] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[146] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[147] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[148] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[149] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[150] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[151] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[152] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_X[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[153] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[154] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[155] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[156] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[157] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[158] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[159] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[160] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[161] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[162] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[163] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[164] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[165] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[166] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[167] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[168] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Y[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[169] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[170] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[171] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[172] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[173] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[174] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[175] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[176] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[177] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[178] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[179] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[180] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[181] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[182] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[183] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[184] -to "SENSOR_OUT:SENSOR_OUT_i|MAGNETOMETER_Z[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[185] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[186] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[187] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[188] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[189] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[190] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[191] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[192] -to "SENSOR_OUT:SENSOR_OUT_i|Temperature[7]" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=193" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=193" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=193" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=603" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[35]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[34]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[33]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[32]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[31]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[30]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[29]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[28]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[27]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[26]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[25]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[24]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[23]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[22]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[21]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[20]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[0]
+set_location_assignment PIN_AA11 -to GPIO[35]
+set_location_assignment PIN_AA13 -to GPIO[34]
+set_location_assignment PIN_AA26 -to GPIO[33]
+set_location_assignment PIN_Y11 -to GPIO[32]
+set_location_assignment PIN_AB26 -to GPIO[31]
+set_location_assignment PIN_AB25 -to GPIO[30]
+set_location_assignment PIN_Y17 -to GPIO[29]
+set_location_assignment PIN_Y18 -to GPIO[28]
+set_location_assignment PIN_W14 -to GPIO[27]
+set_location_assignment PIN_AA18 -to GPIO[26]
+set_location_assignment PIN_W11 -to GPIO[25]
+set_location_assignment PIN_AA19 -to GPIO[24]
+set_location_assignment PIN_AB23 -to GPIO[23]
+set_location_assignment PIN_Y19 -to GPIO[22]
+set_location_assignment PIN_AC22 -to GPIO[21]
+set_location_assignment PIN_AC23 -to GPIO[20]
+set_location_assignment PIN_AD17 -to GPIO[19]
+set_location_assignment PIN_C12 -to GPIO[18]
+set_location_assignment PIN_AD20 -to GPIO[17]
+set_location_assignment PIN_D12 -to GPIO[16]
+set_location_assignment PIN_AE24 -to GPIO[15]
+set_location_assignment PIN_AD23 -to GPIO[14]
+set_location_assignment PIN_AE6 -to GPIO[13]
+set_location_assignment PIN_AE23 -to GPIO[12]
+set_location_assignment PIN_AG14 -to GPIO[11]
+set_location_assignment PIN_AD5 -to GPIO[10]
+set_location_assignment PIN_AH3 -to GPIO[9]
+set_location_assignment PIN_AF4 -to GPIO[8]
+set_location_assignment PIN_AH14 -to GPIO[7]
+set_location_assignment PIN_AF7 -to GPIO[6]
+set_location_assignment PIN_AH13 -to GPIO[5]
+set_location_assignment PIN_D8 -to GPIO[4]
+set_location_assignment PIN_D11 -to GPIO[3]
+set_location_assignment PIN_W12 -to GPIO[2]
+set_location_assignment PIN_E8 -to GPIO[1]
+set_location_assignment PIN_V12 -to GPIO[0]
+set_global_assignment -name VERILOG_FILE DE10_NANO_RFS_SENSOR_RTL.v
+set_global_assignment -name VERILOG_FILE V/DHT22.v
+set_global_assignment -name VERILOG_FILE V/Fuzzy_Controller.v
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/all_sensor_auto_stripped.stp

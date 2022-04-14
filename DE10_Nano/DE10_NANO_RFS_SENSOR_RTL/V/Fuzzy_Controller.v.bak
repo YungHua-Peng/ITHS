@@ -1,0 +1,101 @@
+module Fuzzy_Controller (
+input  				RESET_N         ,
+input  				CLOCK_50        ,
+input  	[15:0]	Real_Temperature_User_A,
+input		[15:0]	Real_Temperature_User_B,
+input  	[5:0]		Heat_Feeling_User_A, //-30~30
+input		[5:0]		Heat_Feeling_User_B,
+
+output	reg	[15:0]	PWM_Heater_User_A ,
+output	reg	[15:0]	PWM_Heater_User_B
+);
+
+//Clock Assignment
+parameter 			CntValue = 50000000;
+reg   	[31:0]   Clk_Cnt;
+reg					Clk_2Hz;
+
+//Weight Assignment
+//Weight_1 = 0%  , Weight_2 = 25%  , Weight_3 = 50%
+//Weight_4 = 75% , Weight_5 = 100%
+reg 		[15:0]	Weight_1;
+reg 		[15:0]	Weight_2;
+reg 		[15:0]	Weight_3;
+reg 		[15:0]	Weight_4;
+reg 		[15:0]	Weight_5;
+reg 		[15:0]	Weight_6;
+
+//Another
+reg 		[15:0]	Value_Difference_A;
+reg 		[15:0]	Value_Difference_B;
+
+//Get 2Hz CloCK
+always @(posedge CLOCK_50) begin
+	if ( Clk_Cnt >= ((CntValue/(2*2))-1)) begin
+		Clk_2Hz <= ~ Clk_2Hz;
+		Clk_Cnt <= 0;
+	end else begin
+		Clk_2Hz <= Clk_2Hz;
+		Clk_Cnt <= Clk_Cnt +1;
+	end
+end
+
+
+//User A's fuzzy controller
+always @(posedge Clk_2Hz) begin
+	
+	if (Heat_Feeling_User_A < 5) begin
+		Weight_1 <= 1000;
+		Weight_2 <= 0;
+		Weight_3 <= 0;
+		Weight_4 <= 0;
+		Weight_5 <= 0;
+	end else if (Heat_Feeling_User_A < 10 && Heat_Feeling_User_A >= 5) begin
+		Weight_1 <= ((Heat_Feeling_User_A-5) * 1000) / (10-5);
+		Weight_2 <= 1000 - Weight_1;
+		Weight_3 <= 0;
+		Weight_4 <= 0;
+		Weight_5 <= 0;
+	end else if (Heat_Feeling_User_A < 15 && Heat_Feeling_User_A >= 10) begin
+		Weight_1 <= 0;
+		Weight_2 <= ((Heat_Feeling_User_A-10) * 1000) / (15-10);
+		Weight_3 <= 1000 - Weight_2;
+		Weight_4 <= 0;
+		Weight_5 <= 0;
+	end else if (Heat_Feeling_User_A < 20 && Heat_Feeling_User_A >= 15) begin
+		Weight_1 <= 0;
+		Weight_2 <= 0;
+		Weight_3 <= ((Heat_Feeling_User_A-15) * 1000) / (20-15);
+		Weight_4 <= 1000 - Weight_3;
+		Weight_5 <= 0;
+	end else if (Heat_Feeling_User_A < 30 && Heat_Feeling_User_A >= 20) begin
+		Weight_1 <= 0;
+		Weight_2 <= 0;
+		Weight_3 <= 0;
+		Weight_4 <= ((Heat_Feeling_User_A-20) * 1000) / (30-20);
+		Weight_5 <= 1000 - Weight_4;
+	end  else if (Heat_Feeling_User_A == 30 || Heat_Feeling_User_A == 31) begin
+		Weight_1 <= 0;
+		Weight_2 <= 0;
+		Weight_3 <= 0;
+		Weight_4 <= 0;
+		Weight_5 <= 1000;
+	end else begin
+		//Cold
+		Weight_1 <= 0;
+		Weight_2 <= 0;
+		Weight_3 <= 0;
+		Weight_4 <= 0;
+		Weight_5 <= 0;
+	end
+	
+	PWM_Heater_User_A <= (250 * Weight_2 / 1000) + (500 * Weight_3 / 1000) + (750 * Weight_4 / 1000) + (Weight_5);
+	
+end
+
+//User B's fuzzy controller
+always @(posedge Clk_2Hz) begin
+	
+end
+
+endmodule

@@ -1,0 +1,4 @@
+Temperature_Show.ino為七段顯示器顯示目前AB兩位使用者之環境溫度之Arduino程式
+
+Arduino會接收來自DE10-Nano所傳出之AB兩位使用者之溫度資訊，
+並將其透過SN74HC595移位暫存器將資料顯示於六位元之七段顯示器上。

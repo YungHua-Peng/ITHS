@@ -1,0 +1,9 @@
+Face_temperature_data_A.xlsx 為受試者A的所蒐集的臉部資料
+
+Face_temperature_data_B.xlsx 為受試者B的所蒐集的臉部資料
+
+Modeltraining.ows 為運行於orange3上的深度學習程式
+
+DHT22_temperature.pkcls 為訓練好之預測模型的權重檔
+
+FPGA_human thermal sensation predict system.py 為運行於樹梅派上，最終用於預測人體熱感覺的主程式

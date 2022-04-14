@@ -1,0 +1,10 @@
+DE10_NANO_RFS_SENSOR_RTL資料夾為DE10-Nano之專案資料夾
+
+DE10_NANO_RFS_SENSOR_RTL.v為主要之top檔
+其餘Verilog檔案接放置於V資料夾內
+
+DE10-Nano會從Rasberry PI接收A,B兩位使用者之熱感覺，
+與此同時，藉由HC1000及DHT22得到A,B兩位使用者之環境溫度，
+將熱感覺及環境溫度作為模糊邏輯控制器之輸入，
+最終輸出製暖片所需之工作週期，藉此改變A,B兩位使用者之環境溫度，
+同時將目前之A,B兩位使用者之環境溫度傳遞至Arduino控制板中以便顯示於六位元七段顯示器上。
